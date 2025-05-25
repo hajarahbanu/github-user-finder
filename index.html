@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'github-dark': '#0d1117',
+                        'github-card': '#161b22',
+                        'github-border': '#30363d',
+                        'github-text': '#e6edf3',
+                        'github-muted': '#8b949e',
+                        'github-blue': '#58a6ff',
+                        'github-green': '#238636'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-github-dark text-white font-sans">
+    <div class="max-w-4xl mx-auto p-6 space-y-6">
+        <!-- Search Card -->
+        <div class="bg-github-card border border-github-border rounded-lg p-6">
+            <div class="flex items-center justify-center mb-3">
+                <i class="ri-github-fill text-3xl mr-3"></i>
+                <h1 class="text-2xl font-semibold">GitHub User Finder</h1>
+            </div>
+            <p class="text-github-muted text-center mb-6">Search and view GitHub user profiles in style</p>
+            <div class="flex max-w-md mx-auto">
+                <input 
+                    type="text" 
+                    placeholder="Enter GitHub username..." 
+                    class="usernameinp flex-1 px-4 py-2 bg-github-dark border border-github-border rounded-l-lg text-white placeholder-github-muted focus:outline-none focus:ring-2 focus:ring-github-blue"
+                >
+                <button class=" search px-6 py-2 bg-github-green text-white rounded-r-lg hover:bg-opacity-90 transition-colors">
+                    Search
+                </button>
+            </div>
+        </div>
+
+
+<!--Profile Card -->
+        <div class="card bg-github-card border border-github-border rounded-lg p-6">
+         
+        </div>
+    
+                <!-- Loading Skeleton -->
+        <div class="bg-github-card border border-github-border rounded-lg p-6">
+            <div class="flex gap-6 mb-6">
+                <div class="w-20 h-20 bg-github-border rounded-full animate-pulse"></div>
+                <div class="flex-1 space-y-3">
+                    <div class="h-6 bg-github-border rounded animate-pulse w-1/2"></div>
+                    <div class="h-4 bg-github-border rounded animate-pulse w-1/3"></div>
+                    <div class="h-4 bg-github-border rounded animate-pulse w-3/4"></div>
+                    <div class="h-4 bg-github-border rounded animate-pulse w-1/2"></div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+                <div class="h-16 bg-github-border rounded-lg animate-pulse"></div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+   <div class="error-message bg-red-600 text-white-400 p-4 rounded-lg text-center hidden">
+    <i class="ri-error-warning-line mr-2"></i>
+    User not found. Please try a different username.
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
